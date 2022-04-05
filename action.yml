@@ -2,6 +2,10 @@ name: SonarQube Analysis
 description: Performs code-quality/code-smells analysis.
 
 inputs:
+  BuildConfiguration:
+    description: i.e. Debug or Release
+    default: Release
+    required: false
   SONAR_TOKEN:
     description: i.e. ${{ secrets.SONAR_TOKEN }}
     required: false
@@ -44,7 +48,7 @@ runs:
       run: |
         if ("${{ inputs.SONAR_TOKEN }}" -ne "") {
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"${{ github.actor }}_${{ github.event.repository.name }}" /o:"${{ github.actor }}" /d:sonar.login="${{ inputs.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build -c ${{ needs.build.outputs.BuildConfiguration }}
+          dotnet build -c ${{ inputs.BuildConfiguration }}
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ inputs.SONAR_TOKEN }}"
         }
         else {
