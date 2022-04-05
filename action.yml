@@ -2,12 +2,15 @@ name: SonarQube Analysis
 description: Performs code-quality/code-smells analysis.
 
 inputs:
+  GITHUB_TOKEN:
+    description: i.e. secrets.GITHUB_TOKEN
+    required: true
+  SONAR_TOKEN:
+    description: Pass in the SONAR_TOKEN here from secrets.
+    required: true
   BuildConfiguration:
     description: i.e. Debug or Release
     default: Release
-    required: false
-  SONAR_TOKEN:
-    description: Pass in the SONAR_TOKEN here from secrets.
     required: false
     
 runs:
