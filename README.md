@@ -1,3 +1,12 @@
-# GitHub Action .NET NuGet Test
+# GitHub Action: SonarQube Analysis
 
-This stub project is used to test CI/CD GitHUb Actions & workflows.
+```yaml
+    steps:
+      - uses: f2calv/gha-sonarqube@main
+        with:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+```
+
+## Inputs
+
+- SONAR_TOKEN - this is optional, if the token isn't passed in then the action will post a warning but continue to completion.
