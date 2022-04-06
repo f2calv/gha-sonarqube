@@ -1,4 +1,5 @@
 name: SonarQube Analysis
+author: SonarSource SA / Alex Vincent
 description: Performs code-quality/code-smells analysis.
 
 inputs:
