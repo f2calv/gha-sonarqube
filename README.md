@@ -3,7 +3,7 @@
 ```yaml
 steps:
 
-- uses: f2calv/gha-sonarqube@main
+- uses: f2calv/gha-sonarqube@1
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
