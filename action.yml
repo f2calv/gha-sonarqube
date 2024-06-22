@@ -3,7 +3,7 @@ author: SonarSource SA / Alex Vincent
 description: Performs code-quality/code-smells analysis.
 
 inputs:
-  GITHUB_TOKEN: #TODO: remove this!
+  GITHUB_TOKEN:
     description: i.e. secrets.GITHUB_TOKEN
     required: true
   SONAR_TOKEN:
@@ -48,6 +48,8 @@ runs:
         New-Item -Path .\.sonar\scanner -ItemType Directory
         dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
     - name: Build and analyze
+      env:
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }} # Needed to get PR information, if any
       shell: powershell
       run: |
         if ("${{ inputs.SONAR_TOKEN }}" -ne "") {
