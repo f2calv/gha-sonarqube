@@ -16,7 +16,7 @@ inputs:
     description: i.e. Debug or Release
     default: Release
     required: false
-    
+
 runs:
   using: composite
   steps:
