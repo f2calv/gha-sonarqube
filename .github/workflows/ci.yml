@@ -13,6 +13,9 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  lint:
+    uses: f2calv/gha-workflows/.github/workflows/lint.yml@v1
+
   release:
     uses: f2calv/gha-workflows/.github/workflows/gha-release-versioning.yml@v1
     permissions:
