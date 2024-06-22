@@ -3,11 +3,11 @@ author: SonarSource SA / Alex Vincent
 description: Performs code-quality/code-smells analysis.
 
 inputs:
-  GITHUB_TOKEN:
-    description: i.e. inputs.GITHUB_TOKEN
+  GITHUB_TOKEN: #TODO: remove this!
+    description: i.e. secrets.GITHUB_TOKEN
     required: true
   SONAR_TOKEN:
-    description: i.e. inputs.SONAR_TOKEN
+    description: i.e. secrets.SONAR_TOKEN
     required: true
   SONAR_HOST_URL:
     required: false
